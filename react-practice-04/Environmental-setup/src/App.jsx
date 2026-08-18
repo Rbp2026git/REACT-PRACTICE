@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 function App() {
 
-  const [userName, setUserName] = useState('Raushan Bhai Patel');
+  const [userName, setUserName] = useState('Adrina Patel');
   const [count, setCount] = useState(0);
 
   function sum (a, b) {
