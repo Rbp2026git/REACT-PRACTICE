@@ -1,28 +1,18 @@
-function User (props) {
+function User({ name, age, email = "Email not provided", ...others }) {
+
     return (
-        <ul>
-            {props.numbers.map((num, index) => (
-                <li key={index}>{num}</li>
-            ))}
-        </ul>
+        <>
+            <div>
+                <h2>Name: {name}</h2>
+                <p>Age: {age}</p>
+                <p>Email: {email}</p>
+                <p>City: {others.city}</p>
+                <p>State: {others.state}</p>
+
+            </div>
+            <hr />
+        </>
+
     )
 }
 export default User;
-
-export function Profile (props) {
-    return (
-        <div>
-            <h2>{props.person.name}</h2>
-            <p>Age: {props.person.age}</p>
-            <p>Email: {props.person.email}</p>
-        </div>
-    )
-}
-
-export function Button (props) {
-    return (
-        <button onClick={() => props.greetUser(props.person.name)}>
-            Greet {props.person.name}
-        </button>
-    )
-}

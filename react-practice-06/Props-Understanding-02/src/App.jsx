@@ -1,23 +1,35 @@
-import User, {Profile, Button} from './User';
+import User from './User';
+import userData from './data';
+import UserCard from './components/nested-props/UserCard';
+import TopScores, {PlayerList} from "./components/array-props/TopScores";
 
 function App() {
 
-  const Person = {
-    name: 'John Doe',
-    age: 30,
-    email: 'john.doe@example.com'
-  };
-
-  function greetUser(name) {
-    alert(`Hello, ${name}!`);
-  }
 
   return (
     <>
-      <User numbers= {[10, 20, 30]}/>
+      {userData.map((user, index) => (
+        <User
+          key={index}
+          name={user.name}
+          age={user.age}
+          email={user.email}
+          city={user.city}
+          state={user.state}
+        />
+      ))}
+
+      <UserCard
+        user={{ name: "Rahul Kumar", address: {city: "Pune", pincode: "411001"} }}
+        theme = "dark"
+      />
       <hr />
-      <Profile person= {Person}/>
-      <Button person= {Person} greetUser= {greetUser}/>
+
+      <TopScores scores = {[95, 88, 76, 66]} />
+      <hr />
+
+      <PlayerList players = {["Virat", "Dhoni", "Bumrah", "Suman"]} />
+
     </>
   )
 }
