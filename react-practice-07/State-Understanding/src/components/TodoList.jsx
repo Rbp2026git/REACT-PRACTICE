@@ -7,7 +7,7 @@ function TodoList() {
     const addTodo = () => {
         if (newItem.trim() === "") return;
         // const copy = [...todos];
-        // kabhi bhi Array ko directly mutate mat karo - kyunki React re-render trigger nahi karega.
+        // kabhi bhi Array ko directly mutate mat karo - Kyunki React re-render trigger nahi karega.
         // . Naya item add karne ke liye "spread Operator" ka use karo - ye ek naya shallow copy banata hai.
         setTodos([...todos, newItem]);
         setNewItem(""); //iska kaam hai newItem ko input ke duara aaya gaya strig ko khali karna
