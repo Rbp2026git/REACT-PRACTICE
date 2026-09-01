@@ -31,7 +31,7 @@ export function App() {
       })
     );
   };
-  
+
   return (
     <>
       <div>
@@ -45,6 +45,7 @@ export function App() {
             />
           ))}
         </div>
+        <hr />
 
         <h2>Cart</h2>
         <Cart

@@ -13,7 +13,7 @@ function Cart({ cartItems, onRemove, onQuantityChange }) {
         flexDirection: "column"
     };
     return (
-        <div className="cart">
+        <div className="cart" style={{ display: "flex", flexWrap: "wrap" }}>
             {cartItems.map((item) => (
                 <div key={item.id} className="cart-item" style={cartItemStyle}>
 
