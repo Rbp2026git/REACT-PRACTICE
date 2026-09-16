@@ -16,10 +16,8 @@ function App() {
   };
 
   const handleToggleRead = (title) =>{
-    setBooks((prevBooks) =>
-      prevBooks.map((b)=>
-        b.title === title ? {...b, read:!b.read }: b
-      )
+    setBooks((prevBooks) => 
+    prevBooks.map((b) => b.title === title ? {...b, read: !b.read } : b )
     );
   };
 

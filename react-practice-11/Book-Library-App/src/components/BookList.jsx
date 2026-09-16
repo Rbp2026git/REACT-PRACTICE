@@ -13,7 +13,7 @@ function BookList({books, filterGenre, onToggleRead}) {
             ) : (
                 <ul>
                     {filteredBook.map((book, index) => (
-                        <BookCard key={index} book={book} onToggleRead = {onToggleRead} />
+                        <BookCard key={index} book={book}  onToggleRead={onToggleRead}/>
                     ))}
                 </ul>
             )}
