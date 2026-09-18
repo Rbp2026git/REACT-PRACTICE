@@ -9,10 +9,10 @@ function ProfileCard() {
     });
 
     function inputHandler(e) {
-        console.log(e.target.name);
+        const {name, value} = e.target;
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [name]: value
         });
     }
 
