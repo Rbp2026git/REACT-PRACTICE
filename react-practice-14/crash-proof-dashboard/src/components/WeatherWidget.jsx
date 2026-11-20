@@ -22,7 +22,7 @@ function WeatherWidget({city}) {
             `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,wind_speed_10m`,
             { signal: controller.signal }
         ).then((res) => {
-            if(!res.ok) throw new Error(`Wether API rejected "${city} (${res.status})`);
+            if(!res.ok) throw new Error(`Weather API rejected "${city} (${res.status})`);
             return res.json();
         }).then((json) => setData(json.current))
         .catch((err) => {

@@ -18,11 +18,16 @@ function UserListWidget () {
         });
 
         return () => controller.abort();
-    }, []);
+    }, [throwError]);
 
     // Simulate a bad API response: one user loses its address field
-    const corruptData = () => setUsers((prev) =>
-    prev.map((u, i) => (i === 2 ? { ...u, address: undefined} : u)));
+    const corruptData = () => {
+        setUsers((prev) => {
+            return prev.map((u, i) => 
+                i === 2 ? { ...u, address: undefined} : u
+        );
+        });
+    };
 
     if(!users) return <p>Loading users...</p>
     return (
@@ -30,7 +35,8 @@ function UserListWidget () {
             <ul>
                 {users.map((user) => (
                     <li key={user.id}>
-                        {user.name} <span>{user.address.city}</span>
+                        {user.name} {" "}
+                        <span>{user.address?.city ?? "City unavailable"}</span>
                     </li>
                 ))}
             </ul>
